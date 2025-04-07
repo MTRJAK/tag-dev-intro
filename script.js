@@ -24,7 +24,7 @@ function renderQuestions() {
 
     const textarea = document.createElement("textarea");
     textarea.value = q.content;
-    textarea.placeholder = "내용을 입력하세요...";
+    textarea.placeholder = "자기소개서 내용을 입력하세요...";
     textarea.oninput = () => {
       questions[i].content = textarea.value;
       saveQuestions();
