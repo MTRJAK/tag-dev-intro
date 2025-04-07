@@ -1,63 +1,82 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #007bff;
+  --font-family: 'Noto Sans KR', sans-serif;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  text-align: center;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 header {
-  padding: 2rem;
-  background: #4a90e2;
-  color: white;
-}
-
-#tags {
-  margin: 2rem auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
+  align-items: center;
 }
 
-.tag {
-  background: #e0e0e0;
-  padding: 1rem 1.5rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s;
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.tag:hover {
-  background: #c0c0c0;
+button,
+select,
+input[type="color"] {
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
+#questionList {
+  margin-top: 2rem;
 }
 
-.modal-content {
-  background-color: white;
-  margin: auto;
-  padding: 2rem;
+.question {
+  border: 2px solid var(--accent-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 28px;
+.question input[type="text"] {
+  width: 100%;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.question textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.question .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.question .actions button {
+  background-color: #f44336;
+  color: white;
+  border: none;
   cursor: pointer;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
 }
