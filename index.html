@@ -7,25 +7,19 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>자기소개서 작성기</h1>
-      <div class="controls">
-        <button id="darkModeToggle">다크모드</button>
-        <select id="fontSelector">
-          <option value="'Noto Sans KR', sans-serif">기본 폰트</option>
-          <option value="serif">세리프</option>
-          <option value="monospace">모노스페이스</option>
-        </select>
-        <input type="color" id="themeColorPicker" title="테마 색상 선택" />
-      </div>
-    </header>
+  <section class="hero">
+    <h1>나만의 자기소개서</h1>
+    <p>자유롭게 문항을 추가하고 내용을 작성해보세요</p>
+  </section>
 
-    <main>
-      <div id="questionList"></div>
-      <button id="addQuestionBtn">문항 추가</button>
-    </main>
-  </div>
+  <main class="container">
+    <div id="questionList"></div>
+    <button id="addQuestionBtn">문항 추가</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 자기소개서 작성기</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

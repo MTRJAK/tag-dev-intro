@@ -1,8 +1,5 @@
 const questionList = document.getElementById("questionList");
 const addQuestionBtn = document.getElementById("addQuestionBtn");
-const darkModeToggle = document.getElementById("darkModeToggle");
-const fontSelector = document.getElementById("fontSelector");
-const themeColorPicker = document.getElementById("themeColorPicker");
 
 let questions = JSON.parse(localStorage.getItem("questions")) || [];
 
@@ -27,7 +24,7 @@ function renderQuestions() {
 
     const textarea = document.createElement("textarea");
     textarea.value = q.content;
-    textarea.placeholder = "자기소개서 내용을 입력하세요...";
+    textarea.placeholder = "내용을 입력하세요...";
     textarea.oninput = () => {
       questions[i].content = textarea.value;
       saveQuestions();
@@ -56,18 +53,6 @@ addQuestionBtn.onclick = () => {
   questions.push({ title: "", content: "" });
   saveQuestions();
   renderQuestions();
-};
-
-darkModeToggle.onclick = () => {
-  document.body.classList.toggle("dark-mode");
-};
-
-fontSelector.onchange = (e) => {
-  document.body.style.setProperty("--font-family", e.target.value);
-};
-
-themeColorPicker.oninput = (e) => {
-  document.documentElement.style.setProperty("--accent-color", e.target.value);
 };
 
 renderQuestions();
